@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>hw20</title>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="300"></canvas>
+	<script>
+	// 	var points = [
+	// 	  [50, 50],
+	// 	  [50, 100],
+	// 	  [100, 100],
+	// 	  [100, 50],
+	// 	  [50, 50]
+	// 	];
+
+	// 	let canvas = document.getElementById('canvas');
+	// 	let ctx = canvas.getContext('2d');
+	// 	ctx.strokeStyle = "Red";
+	// 	ctx.lineWidth = "5"
+		
+	// 	function drawLiner(points){
+	// 		ctx.beginPath();
+	// 		points.forEach(function(item, i){
+	// 			if (i === 0){
+	// 				ctx.moveTo(item[0],item[1]);
+	// 			} else {
+	// 				ctx.lineTo(item[0],item[1]);
+	// 			}
+	// 		})
+	// 		ctx.stroke();
+	// 	}
+	// drawLiner(points);
+
+	// second снеговик
+     
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    var circle = function (x, y, radius, fillCircle) {
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+      if (fillCircle) {
+        ctx.fill();
+      } else {
+        ctx.stroke();
+      }
+    };
+
+    var drawSnowman = function (x, y) {
+      ctx.lineWidth = 4;
+
+      circle(x + 50, y + 110, 40, false);
+      circle(x + 50, y + 40, 30, false);
+      circle(x + 40, y + 35, 5, true);
+      circle(x + 60, y + 35, 5, true);
+
+      circle(x + 50, y + 90, 5, true);
+      circle(x + 50, y + 110, 5, true);
+      circle(x + 50, y + 130, 5, true);
+
+      ctx.fillStyle = "Red";
+      circle(x + 50, y + 45, 5, true);
+    };
+
+    drawSnowman(0, 0);
+    
+        
+
+		
+	</script>
+
+</body>
+</html>
